@@ -6,6 +6,11 @@ namespace WebApplication7.Controllers;
 
 public class HomeController : Controller
 {
+    public IActionResult GetToKnowJoel() // I  added this the rest came with the tamplate 
+    {
+        return View();
+    }
+    
     public IActionResult Index()
     {
         return View();
