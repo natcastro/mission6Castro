@@ -1,7 +1,60 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<h1>The Joel Hilton Film Collection</h1>
+<div class="p-4 p-md-5 mb-4 rounded-4 bg-light border">
+    <div class="row align-items-center g-4">
+        <div class="col-md-7">
+            <span class="badge text-bg-dark mb-3">IS 413 • Mission 6</span>
 
-<img src="~/hiltonbro.jpg" alt="Joel Hilton" style="max-width:400px;" />
+            <h1 class="display-5 fw-bold">The Joel Hilton Film Collection</h1>
+
+            <p class="lead text-secondary">
+                Track Joel’s ever-growing list of worthy movies. Add new films with rating,
+                edited status, and optional notes — all stored in a SQLite database.
+            </p>
+
+            <div class="d-flex gap-2 flex-wrap mt-3">
+                <a class="btn btn-dark btn-lg" asp-controller="Movies" asp-action="Add">
+                    Add a Movie
+                </a>
+
+                <a class="btn btn-outline-dark btn-lg" asp-controller="Home" asp-action="GetToKnowJoel">
+                    Get to Know Joel
+                </a>
+            </div>
+
+            <div class="row mt-4 g-3">
+                <div class="col-sm-4">
+                    <div class="p-3 rounded-4 border bg-white h-100">
+                        <div class="fw-semibold">✅ Model First</div>
+                        <div class="text-secondary small">EF Core + SQLite</div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="p-3 rounded-4 border bg-white h-100">
+                        <div class="fw-semibold">🎬 Movie Form</div>
+                        <div class="text-secondary small">Rating dropdown + Edited</div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="p-3 rounded-4 border bg-white h-100">
+                        <div class="fw-semibold">🔗 Easy Navigation</div>
+                        <div class="text-secondary small">Shared menu on every page</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="ratio ratio-4x3 rounded-4 overflow-hidden border bg-white">
+                <img src="~/hiltonbro.jpg" class="w-100 h-100 object-fit-cover" alt="Joel Hilton">
+            </div>
+            <p class="text-secondary small mt-2 mb-0">
+                Photo provided in the assignment instructions.
+            </p>
+        </div>
+    </div>
+</div>
