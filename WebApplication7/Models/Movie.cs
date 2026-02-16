@@ -2,9 +2,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication7.Models
 {
+// Mission 6: Model representing a movie in Joel's collection
     public class Movie
     {
-        [Key]
+        [Key]// Primary key for SQLite database
         public int MovieId { get; set; }
 
         [Required]
