@@ -1,0 +1,14 @@
+@model WebApplication7.Models.Movie
+
+<h1>Delete Movie</h1>
+
+<div class="alert alert-warning mt-3">
+    Are you sure you want to delete <strong>@Model.Title</strong> (@Model.Year)?
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.MovieId" />
+
+    <button class="btn btn-danger" type="submit">Yes, Delete</button>
+    <a class="btn btn-outline-secondary" asp-action="listMovie">Cancel</a>
+</form>

@@ -3,20 +3,19 @@
     var categories = ViewBag.Categories as List<WebApplication7.Models.Category>;
 }
 
-<h1>Add a Movie</h1>
+<h1>Edit Movie</h1>
 
-<form asp-action="Add" method="post" class="mt-3">
+<form asp-action="Edit" method="post" class="mt-3">
+    <input type="hidden" asp-for="MovieId"/>
 
     <div class="mb-3">
         <label asp-for="CategoryId" class="form-label">Category</label>
         <select asp-for="CategoryId" class="form-select">
-            <option value="">Select...</option>
             @foreach (var c in categories)
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
             }
         </select>
-        <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
@@ -69,10 +68,9 @@
     <div class="mb-3">
         <label asp-for="Notes" class="form-label"></label>
         <input asp-for="Notes" class="form-control"/>
-        <span asp-validation-for="Notes" class="text-danger"></span>
     </div>
 
-    <button class="btn btn-dark" type="submit">Submit</button>
+    <button class="btn btn-dark" type="submit">Save</button>
     <a class="btn btn-outline-secondary" asp-action="listMovie">Cancel</a>
 </form>
 

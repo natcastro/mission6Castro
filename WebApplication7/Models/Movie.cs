@@ -1,33 +1,36 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication7.Models
 {
-// Mission 6: Model representing a movie in Joel's collection
+    [Table("Movies")] // <-- tabla real en el .sqlite del profe
     public class Movie
     {
-        [Key]// Primary key for SQLite database
+        [Key]
         public int MovieId { get; set; }
 
-        [Required]
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
 
         [Required]
         public string Title { get; set; }
 
         [Required]
+        [Range(1888, 3000, ErrorMessage = "Year must be 1888 or later.")]
         public int Year { get; set; }
 
-        [Required]
-        public string Director { get; set; }
+        public string? Director { get; set; }
+        public string? Rating { get; set; }
 
         [Required]
-        public string Rating { get; set; }
-
-        public bool Edited { get; set; }
+        public bool? Edited { get; set; }
 
         public string? LentTo { get; set; }
 
-        [StringLength(25)]
+        [Required]
+        public bool? CopiedToPlex { get; set; }
+
         public string? Notes { get; set; }
+
+        public Category? Category { get; set; }
     }
 }

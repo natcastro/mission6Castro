@@ -4,11 +4,11 @@ namespace WebApplication7.Models
 {
     public class MovieAppcContex : DbContext
     {
-        public MovieAppcContex(DbContextOptions<MovieAppcContex> options)
-            : base(options)
+        public MovieAppcContex(DbContextOptions<MovieAppcContex> options) : base(options)
         {
         }
 
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
